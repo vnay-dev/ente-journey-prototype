@@ -1,0 +1,42 @@
+.nav {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  z-index: 20;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/*
+ * ente home_bottom_nav_bar.dart:
+ * - item spacing 22px (each side) → 44px between tab centers
+ * - edge inset Spacing.lg (16px) + 10px inner pad
+ * - icon 18px in ~38–40px active chip
+ * Total width ≈ 316px on 360dp
+ */
+.pill {
+  display: flex;
+  align-items: center;
+  padding: var(--nav-pill-padding-y) var(--nav-pill-padding-x);
+  column-gap: var(--nav-pill-gap);
+  border-radius: var(--nav-pill-radius);
+  background: var(--ente-surface);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+  pointer-events: auto;
+}
+
+.tab {
+  display: grid;
+  place-items: center;
+  width: var(--nav-tab-size);
+  height: var(--nav-tab-size);
+  border: none;
+  border-radius: var(--nav-tab-radius);
+  background: transparent;
+  color: var(--ente-icon);
+  flex-shrink: 0;
+}
+
+.tabActive {
+  background: var(--ente-fill-dark);
+}

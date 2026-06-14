@@ -1,0 +1,234 @@
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+
+.framesRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.framesRowDual {
+  gap: 28px;
+}
+
+.introReveal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.introReveal:not(.introRevealExit) {
+  transition:
+    opacity var(--demo-intro-fade-ms, 5500ms) linear,
+    transform var(--demo-intro-fade-ms, 5500ms) ease-out;
+}
+
+.introRevealPending {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+.introRevealExit {
+  transition: opacity var(--demo-frame-fade-ms, 1600ms) ease-out;
+  opacity: 0;
+  transform: scale(1);
+}
+
+.framesRowCentered {
+  transition: gap 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.framesRowExit {
+  animation: demoFramesExit var(--demo-frame-fade-ms, 1600ms) ease-out forwards;
+}
+
+.frameColumnOut {
+  animation: demoFrameColumnOut var(--demo-outro-dual-fade-ms, 1400ms) ease-out forwards;
+}
+
+.frameColumnScaleTransition .scaleHost,
+.frameColumnScaleTransition .device {
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes demoFrameColumnOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes demoFramesExit {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.frameColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.frameLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 18px;
+}
+
+.frameLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ente-text-muted);
+  text-shadow: none;
+}
+
+.previewPrompt {
+  flex-shrink: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 14px 18px;
+  border: 1px solid var(--ente-stroke);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  color: var(--ente-text-strong);
+  text-align: left;
+}
+
+.previewPrompt:hover {
+  background: #fff;
+}
+
+.previewPromptActive {
+  border-color: var(--ente-text-lighter);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.12),
+    0 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+.previewPromptTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ente-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.previewPromptAction {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ente-primary-dark);
+}
+
+/* Host shrinks with scale so the stage doesn't need F11 / extra scroll */
+.scaleHost {
+  position: relative;
+  width: calc(var(--phone-outer-width) * var(--phone-demo-scale, 0.72));
+  height: calc(var(--phone-outer-height) * var(--phone-demo-scale, 0.72));
+}
+
+.device {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--phone-outer-width);
+  height: var(--phone-outer-height);
+  transform: scale(var(--phone-demo-scale, 0.72));
+  transform-origin: top left;
+  filter: drop-shadow(0 30px 46px rgba(0, 0, 0, 0.14))
+    drop-shadow(0 10px 18px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
+}
+
+.sideBtn {
+  position: absolute;
+  z-index: 2;
+  border: none;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #b0b0b6, #f0f0f4 45%, #909096);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.btnMute {
+  left: -2px;
+  top: 15%;
+  width: 3px;
+  height: 14px;
+}
+
+.btnVolUp {
+  left: -2px;
+  top: 20%;
+  width: 3px;
+  height: 28px;
+}
+
+.btnVolDown {
+  left: -2px;
+  top: 25%;
+  width: 3px;
+  height: 28px;
+}
+
+.btnPower {
+  right: -2px;
+  top: 19%;
+  width: 3px;
+  height: 44px;
+  background: linear-gradient(270deg, #b0b0b6, #f0f0f4 45%, #909096);
+}
+
+.frame {
+  position: relative;
+  width: var(--phone-outer-width);
+  height: var(--phone-outer-height);
+}
+
+.frameSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.screen {
+  position: absolute;
+  top: var(--phone-screen-inset);
+  left: var(--phone-screen-inset);
+  width: var(--phone-width);
+  height: var(--phone-height);
+  z-index: 1;
+  overflow: hidden;
+  border-radius: var(--phone-screen-radius);
+  background: var(--ente-bg);
+}

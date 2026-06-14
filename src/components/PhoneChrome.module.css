@@ -1,0 +1,135 @@
+.chrome {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background: var(--ente-bg);
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 36px;
+  padding: var(--status-bar-padding-top) var(--status-bar-padding-x)
+    var(--status-bar-padding-bottom);
+  padding-top: calc(var(--status-bar-padding-top) + var(--safe-top));
+  background: var(--ente-bg);
+  flex-shrink: 0;
+}
+
+.time {
+  flex-shrink: 0;
+  padding-left: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ente-text-strong);
+}
+
+.statusIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 2px;
+  color: var(--ente-text-strong);
+}
+
+.signal {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.signal i {
+  display: block;
+  width: 3px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.signal i:nth-child(1) {
+  height: 4px;
+  opacity: 0.35;
+}
+
+.signal i:nth-child(2) {
+  height: 6px;
+  opacity: 0.55;
+}
+
+.signal i:nth-child(3) {
+  height: 9px;
+  opacity: 0.75;
+}
+
+.signal i:nth-child(4) {
+  height: 12px;
+}
+
+.battery {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.batteryBody {
+  width: 22px;
+  height: 11px;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+  padding: 1.5px;
+  display: block;
+}
+
+.batteryLevel {
+  display: block;
+  width: 75%;
+  height: 100%;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.batteryCap {
+  width: 2px;
+  height: 5px;
+  background: currentColor;
+  border-radius: 0 1px 1px 0;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--ente-bg);
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 48px;
+  padding: 0 var(--nav-bar-padding-x);
+  padding-bottom: var(--safe-bottom);
+  background: var(--ente-surface);
+  border-top: 1px solid var(--ente-stroke);
+  flex-shrink: 0;
+}
+
+.navBtn {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ente-text-muted);
+}
+
+.navBtn:active {
+  background: var(--ente-stroke);
+  color: var(--ente-text-strong);
+}

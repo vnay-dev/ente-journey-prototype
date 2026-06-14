@@ -1,0 +1,38 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sheet-section-gap);
+  padding: 8px var(--sheet-padding) calc(var(--sheet-padding) + env(safe-area-inset-bottom, 0px));
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sheet-copy-gap);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sheet-actions-gap);
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ente-text-muted);
+}
+
+.urlPreview {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--ente-fill-dark);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--ente-text-lighter);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

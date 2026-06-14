@@ -1,0 +1,30 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.unselected {
+  background: var(--ente-surface);
+  color: var(--ente-text-muted);
+}
+
+.selected {
+  background: var(--ente-text);
+  color: #fff;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+}

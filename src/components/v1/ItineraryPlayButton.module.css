@@ -1,0 +1,72 @@
+.playBtn {
+  --play-duration: 0.85s;
+  --play-ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  padding: 0 11px;
+  border: none;
+  border-radius: 12px;
+  background: var(--ente-surface);
+  color: var(--ente-text);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition:
+    max-width var(--play-duration) var(--play-ease),
+    gap var(--play-duration) var(--play-ease),
+    padding var(--play-duration) var(--play-ease);
+}
+
+.playBtnExpanded {
+  max-width: 102px;
+  gap: 6px;
+  padding: 0 10px 0 11px;
+  transition-delay: 0s, 0.2s, 0s;
+}
+
+.playBtn:not(.playBtnExpanded) {
+  transition-delay: 0.18s, 0s, 0s;
+}
+
+.playBtn:active {
+  background: var(--ente-fill-dark);
+}
+
+.playIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.playLabel {
+  min-width: 0;
+  max-width: 0;
+  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transition:
+    max-width 0.75s var(--play-ease),
+    opacity 0.45s ease;
+}
+
+.playBtnExpanded .playLabel {
+  max-width: 9ch;
+  opacity: 1;
+  transition-delay: 0.2s, 0.36s;
+}
+
+.playBtn:not(.playBtnExpanded) .playLabel {
+  opacity: 0;
+  max-width: 0;
+  transition-delay: 0s, 0.18s;
+}

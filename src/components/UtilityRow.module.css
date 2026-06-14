@@ -1,0 +1,57 @@
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 0.5px solid rgba(0, 0, 0, 0.24);
+  border-radius: 8px;
+  background: var(--ente-surface);
+  color: var(--ente-text-muted);
+  text-align: left;
+}
+
+.leading {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--ente-text-strong);
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ente-text-muted);
+}
+
+.trailing {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+.count {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ente-text-muted);
+}
+
+.lock {
+  color: var(--ente-text-muted);
+}

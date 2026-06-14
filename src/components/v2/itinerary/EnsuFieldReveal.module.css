@@ -1,0 +1,167 @@
+@property --ensu-highlight-alpha {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+
+.wrap {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.text {
+  margin: 0;
+  display: inline;
+}
+
+.animBody {
+  position: relative;
+  display: inline;
+}
+
+.oldLayer {
+  display: inline;
+}
+
+.highlightStack {
+  position: relative;
+  display: inline;
+}
+
+.textBase {
+  position: relative;
+  z-index: 1;
+  color: var(--ensu-text-base, var(--ente-text-strong));
+  -webkit-text-fill-color: currentColor;
+}
+
+/* Animated green gradient clipped to glyph color */
+.textHighlightSweep {
+  --ensu-highlight-alpha: 1;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    var(--ensu-text-base, var(--ente-text-strong)) 0%,
+    var(--ensu-text-base, var(--ente-text-strong)) 16%,
+    color-mix(
+        in srgb,
+        var(--ente-primary-dark) calc(var(--ensu-highlight-alpha) * 88%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      30%,
+    color-mix(
+        in srgb,
+        var(--ente-primary) calc(var(--ensu-highlight-alpha) * 100%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      42%,
+    color-mix(
+        in srgb,
+        var(--ente-primary-dark) calc(var(--ensu-highlight-alpha) * 92%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      50%,
+    color-mix(
+        in srgb,
+        var(--ente-primary) calc(var(--ensu-highlight-alpha) * 100%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      58%,
+    color-mix(
+        in srgb,
+        var(--ente-primary-dark) calc(var(--ensu-highlight-alpha) * 88%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      70%,
+    var(--ensu-text-base, var(--ente-text-strong)) 84%,
+    var(--ensu-text-base, var(--ente-text-strong)) 100%
+  );
+  background-size: 260% 100%;
+  background-repeat: no-repeat;
+  background-position: 0% 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: ensuTextSweep 3.9s ease-in-out forwards;
+}
+
+.oldSweep .textHighlightSweep {
+  animation: ensuTextSweepOld 2.4s ease-in-out forwards;
+}
+
+.oldFade {
+  animation: ensuSoftFade 1.2s ease-in forwards;
+}
+
+.oldFade .textBase {
+  animation: ensuSoftFade 1.2s ease-in forwards;
+}
+
+.newLayer {
+  position: relative;
+  display: inline;
+}
+
+.newReveal {
+  animation: ensuNewIn 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.newReveal .textHighlightSweep {
+  animation: ensuTextSweep 3.9s ease-in-out forwards;
+}
+
+.newSettled {
+  color: inherit;
+  -webkit-text-fill-color: currentColor;
+}
+
+@keyframes ensuTextSweep {
+  0% {
+    background-position: 0% 0;
+    --ensu-highlight-alpha: 1;
+  }
+  31% {
+    background-position: 50% 0;
+    --ensu-highlight-alpha: 1;
+  }
+  82% {
+    background-position: 50% 0;
+    --ensu-highlight-alpha: 1;
+  }
+  100% {
+    background-position: 50% 0;
+    --ensu-highlight-alpha: 0;
+  }
+}
+
+@keyframes ensuTextSweepOld {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes ensuSoftFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes ensuNewIn {
+  from {
+    clip-path: inset(0 88% 0 0);
+    opacity: 0.72;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}

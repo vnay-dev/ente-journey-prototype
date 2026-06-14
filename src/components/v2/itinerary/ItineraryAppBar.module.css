@@ -1,0 +1,60 @@
+.bar {
+  flex-shrink: 0;
+  background: var(--ente-bg);
+}
+
+.barOnPrimary {
+  background: transparent;
+  color: var(--ente-white);
+}
+
+.barOnPrimary .backBtn,
+.barOnPrimary .title {
+  color: var(--ente-white);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0;
+  gap: 8px;
+}
+
+.backBtn {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: var(--ente-text);
+  flex-shrink: 0;
+}
+
+.backSpacer {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ente-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}

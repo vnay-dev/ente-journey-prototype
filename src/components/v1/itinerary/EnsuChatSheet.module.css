@@ -1,0 +1,163 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: min(68vh, 560px);
+  padding: 12px var(--sheet-padding) calc(var(--sheet-padding) + env(safe-area-inset-bottom, 0px));
+}
+
+.ensuLogo {
+  height: 16px;
+  width: auto;
+  filter: invert(1);
+}
+
+.intro {
+  margin: 0 0 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ente-text-muted);
+}
+
+.messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 2px;
+  scrollbar-width: none;
+}
+
+.messages::-webkit-scrollbar {
+  display: none;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 88%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.bubbleText {
+  margin: 0;
+}
+
+.changeLink {
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ente-primary-dark);
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--ente-primary);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+
+.assistant {
+  align-self: flex-start;
+  background: var(--ente-surface);
+  color: var(--ente-text);
+  border-top-left-radius: 6px;
+}
+
+.composer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--ente-stroke);
+}
+
+.composerField {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  min-height: 52px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 12px;
+  background: var(--ente-surface);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  /* min-height: 24px; */
+  max-height: 120px;
+  padding: 8px 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ente-text);
+  resize: none;
+  overflow: hidden;
+  scrollbar-width: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.input:focus,
+.input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.input::-webkit-scrollbar {
+  display: none;
+}
+
+.input::placeholder {
+  color: var(--ente-text-lighter);
+}
+
+.send {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-top: 2px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ente-text-strong);
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.sendIcon {
+  display: flex;
+  transform: rotate(90deg);
+}
+
+.send:disabled {
+  color: var(--ente-text-muted);
+  opacity: 1;
+}
+
+.disclaimer {
+  margin: 8px 2px 0;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ente-text-lighter);
+  text-align: center;
+}

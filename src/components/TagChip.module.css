@@ -1,0 +1,36 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chipTrailing {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 12px 12px 16px;
+  gap: 4px;
+}
+
+.unselected {
+  background: var(--ente-surface);
+  color: var(--ente-text-muted);
+}
+
+.selected {
+  background: var(--ente-primary);
+  color: #fff;
+}
+
+.trailing {
+  display: grid;
+  place-items: center;
+}

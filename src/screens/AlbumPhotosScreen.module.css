@@ -1,0 +1,42 @@
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--ente-bg);
+  overflow: hidden;
+}
+
+.highlightSlot {
+  flex-shrink: 0;
+  padding: 0 16px 28px;
+}
+
+.scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollEnd {
+  height: 88px;
+}
+
+.scrollEndCompact {
+  height: 24px;
+}
+
+.empty {
+  padding: 24px 16px;
+  margin: 0;
+  font-size: 14px;
+  color: var(--ente-text-muted);
+}

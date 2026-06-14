@@ -1,0 +1,84 @@
+/* Ente Photos light tokens — from mobile/packages/ente_components/lib/theme/colors.dart */
+:root {
+  --ente-primary: rgb(8, 194, 37);
+  --ente-primary-light: rgb(221, 238, 223);
+  --ente-primary-dark: rgb(6, 157, 30);
+  --ente-green-light-hover: rgb(205, 229, 208);
+  --ente-green-stroke: rgb(186, 236, 194);
+  --ente-green-magic-glow: rgb(235, 248, 236);
+  --ente-green-magic-mist: rgb(240, 250, 241);
+  --ente-green-magic-soft: rgb(245, 252, 246);
+
+  --ente-bg: rgb(244, 244, 244);
+  --ente-surface: rgb(255, 255, 255);
+  --ente-white: rgb(255, 255, 255);
+  --ente-text: rgb(0, 0, 0);
+  --ente-text-muted: rgb(102, 102, 102);
+  --ente-text-lighter: rgb(150, 150, 150);
+  --ente-text-strong: rgb(21, 21, 21);
+  --ente-stroke: rgb(235, 235, 235);
+  --ente-fill-dark: rgb(234, 234, 234);
+  --ente-icon: rgba(0, 0, 0, 0.75);
+  --ente-scrim: rgba(0, 0, 0, 0.55);
+
+  /* Bottom sheet — ente_components bottom_sheet_component.dart */
+  --sheet-radius: 20px;
+  --sheet-padding: 20px;
+  --sheet-gap: 16px;
+  --sheet-copy-gap: 8px;
+  --sheet-section-gap: 28px;
+  --sheet-actions-gap: 12px;
+
+  /* Gallery */
+  --gallery-columns: 4;
+  --gallery-gap: 2px;
+
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-gilroy: "Gilroy-Bold", "Gilroy", var(--font-body);
+
+  /* Screen content area (360×800) */
+  --phone-width: 360px;
+  --phone-height: 800px;
+
+  /* Frame rings — inset layers keep even width on curves */
+  --phone-rim: 3px;
+  --phone-inner-bezel: 2px;
+  --phone-screen-inset: calc(var(--phone-rim) + var(--phone-inner-bezel));
+  --phone-outer-radius: 42px;
+  --phone-bezel-radius: calc(var(--phone-outer-radius) - var(--phone-rim));
+  --phone-screen-radius: calc(
+    var(--phone-outer-radius) - var(--phone-screen-inset)
+  );
+  --phone-outer-width: calc(var(--phone-width) + 2 * var(--phone-screen-inset));
+  --phone-outer-height: calc(
+    var(--phone-height) + 2 * var(--phone-screen-inset)
+  );
+
+  /* Default demo scale before JS measures viewport (≈ laptop window) */
+  --phone-demo-scale: 0.72;
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* System chrome insets (Android-like on 360dp width) */
+  --status-bar-padding-x: 20px;
+  --status-bar-padding-top: 18px;
+  --status-bar-padding-bottom: 24px;
+  --nav-bar-padding-x: 16px;
+
+  /* Album grid tile (3 across on 360dp) */
+  --album-grid-columns: 3;
+  --album-tile-width: 106px;
+
+  /* Floating bottom nav — ente home_bottom_nav_bar.dart */
+  --nav-pill-radius: 20px;
+  --nav-pill-padding-y: 12px;
+  --nav-pill-padding-x: 16px;
+  --nav-pill-gap: 44px;
+  --nav-tab-size: 40px;
+  --nav-tab-radius: 12px;
+
+  /* Albums overview — ente albums_tab + flex_grid_view (8px rhythm) */
+  --albums-section-gap: 24px;
+}

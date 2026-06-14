@@ -1,0 +1,77 @@
+@property --ensu-highlight-alpha {
+  syntax: "<number>";
+  initial-value: 1;
+  inherits: false;
+}
+
+.shimmerStack {
+  display: inline;
+}
+
+.shimmerBase {
+  --ensu-highlight-alpha: 1;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    var(--ensu-text-base, var(--ente-text-strong)) 0%,
+    var(--ensu-text-base, var(--ente-text-strong)) 16%,
+    color-mix(
+        in srgb,
+        var(--ente-primary-dark) calc(var(--ensu-highlight-alpha) * 88%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      30%,
+    color-mix(
+        in srgb,
+        var(--ente-primary) calc(var(--ensu-highlight-alpha) * 100%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      42%,
+    color-mix(
+        in srgb,
+        var(--ente-primary-dark) calc(var(--ensu-highlight-alpha) * 92%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      50%,
+    color-mix(
+        in srgb,
+        var(--ente-primary) calc(var(--ensu-highlight-alpha) * 100%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      58%,
+    color-mix(
+        in srgb,
+        var(--ente-primary-dark) calc(var(--ensu-highlight-alpha) * 88%),
+        var(--ensu-text-base, var(--ente-text-strong))
+      )
+      70%,
+    var(--ensu-text-base, var(--ente-text-strong)) 84%,
+    var(--ensu-text-base, var(--ente-text-strong)) 100%
+  );
+  background-size: 260% 100%;
+  background-repeat: no-repeat;
+  background-position: 0% 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: ensuTextShimmer 3.9s ease-in-out forwards;
+}
+
+@keyframes ensuTextShimmer {
+  0% {
+    background-position: 0% 0;
+    --ensu-highlight-alpha: 1;
+  }
+  31% {
+    background-position: 50% 0;
+    --ensu-highlight-alpha: 1;
+  }
+  82% {
+    background-position: 50% 0;
+    --ensu-highlight-alpha: 1;
+  }
+  100% {
+    background-position: 50% 0;
+    --ensu-highlight-alpha: 0;
+  }
+}

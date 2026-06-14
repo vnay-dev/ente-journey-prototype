@@ -1,0 +1,47 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 8px 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--ente-stroke);
+  flex-shrink: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  color: var(--ente-text-strong);
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+  height: 16px;
+  width: auto;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.signUpBtn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: var(--font-gilroy, "Gilroy", var(--font-body));
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: 500;
+}
+
+.signUpBtn:active {
+  opacity: 0.85;
+}

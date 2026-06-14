@@ -1,0 +1,76 @@
+.splash {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 32px 24px;
+  background: linear-gradient(
+    165deg,
+    var(--ente-primary-dark) 0%,
+    var(--ente-primary) 48%,
+    rgb(12, 168, 38) 100%
+  );
+  text-align: center;
+}
+
+.splashIn {
+  animation: demoSplashIn 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.splashOut {
+  animation: demoSplashOut var(--demo-outro-splash-fade-ms, 1400ms) ease-out forwards;
+}
+
+.mascot {
+  width: min(148px, 42vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.14));
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo {
+  width: 88px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.wordmark {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: lowercase;
+}
+
+@keyframes demoSplashIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes demoSplashOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

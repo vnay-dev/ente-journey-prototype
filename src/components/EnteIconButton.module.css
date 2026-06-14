@@ -1,0 +1,37 @@
+.btn {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 12px;
+  background: var(--ente-surface);
+  color: var(--ente-text);
+  flex-shrink: 0;
+}
+
+.btnMuted {
+  background: var(--ente-fill-dark);
+}
+
+.btnCircular {
+  border-radius: 999px;
+  background: transparent;
+}
+
+.btn:active {
+  background: var(--ente-fill-dark);
+}
+
+.btnCircular:active {
+  background: var(--ente-fill-dark);
+}
+
+.btnOnPrimary {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--ente-white);
+}
+
+.btnOnPrimary:active {
+  background: rgba(255, 255, 255, 0.28);
+}

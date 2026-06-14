@@ -1,0 +1,55 @@
+.section {
+  margin-bottom: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 12px 0 16px;
+}
+
+.title {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ente-text-strong);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-right: -4px;
+}
+
+.iconBtn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.rowScroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
+}
+
+.rowScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  padding: 0 12px 8px 16px;
+  width: max-content;
+}

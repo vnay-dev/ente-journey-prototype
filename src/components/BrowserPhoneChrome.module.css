@@ -1,0 +1,205 @@
+.chrome {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  background: #fff;
+}
+
+.statusBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 24px;
+  padding: 8px 16px 4px;
+  padding-top: calc(8px + var(--safe-top));
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.time {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #1f1f1f;
+}
+
+.statusIcons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #1f1f1f;
+}
+
+.statusIcon {
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.volte {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.signal {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5px;
+  height: 11px;
+}
+
+.signal i {
+  display: block;
+  width: 2.5px;
+  background: currentColor;
+  border-radius: 0.5px;
+}
+
+.signal i:nth-child(1) {
+  height: 3px;
+}
+
+.signal i:nth-child(2) {
+  height: 5px;
+}
+
+.signal i:nth-child(3) {
+  height: 7px;
+}
+
+.signal i:nth-child(4) {
+  height: 9px;
+}
+
+.battery {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.batteryBody {
+  width: 18px;
+  height: 9px;
+  border: 1.2px solid currentColor;
+  border-radius: 2px;
+  padding: 1px;
+  display: block;
+}
+
+.batteryLevel {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.batteryCap {
+  width: 1.5px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 0 1px 1px 0;
+}
+
+.batteryPct {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px 8px;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.toolBtn {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #3c4043;
+  flex-shrink: 0;
+}
+
+.omnibox {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 17px;
+  background: #e8eaed;
+}
+
+.omniboxIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: #5f6368;
+  line-height: 0;
+}
+
+.omniboxText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: #202124;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.tabBadge {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1.8px solid currentColor;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.systemNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  padding: 0 48px;
+  padding-bottom: var(--safe-bottom);
+  background: #f0f0f0;
+  flex-shrink: 0;
+}
+
+.systemNavBtn {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #1f1f1f;
+}

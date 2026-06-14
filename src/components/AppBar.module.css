@@ -1,0 +1,35 @@
+.bar {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 8px;
+  padding: calc(12px + var(--safe-top)) 8px 12px 8px;
+  background: var(--ente-bg);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ente-text-strong);
+}
+
+.back {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 12px;
+  background: var(--ente-surface);
+  color: var(--ente-text-strong);
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+}
+
+.spacer {
+  width: 44px;
+}

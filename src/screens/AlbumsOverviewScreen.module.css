@@ -1,0 +1,31 @@
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--ente-bg);
+}
+
+.scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollEnd {
+  height: 88px;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--albums-section-gap);
+}

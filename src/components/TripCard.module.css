@@ -1,0 +1,40 @@
+.card {
+  display: block;
+  background: var(--ente-surface);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--ente-stroke);
+  transition: transform 0.15s ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.cover {
+  height: 140px;
+}
+
+.body {
+  padding: 14px 16px 16px;
+}
+
+.name {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ente-text-strong);
+}
+
+.meta {
+  margin: 0 0 2px;
+  font-size: 13px;
+  color: var(--ente-text-muted);
+}
+
+.photos {
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ente-primary-dark);
+}

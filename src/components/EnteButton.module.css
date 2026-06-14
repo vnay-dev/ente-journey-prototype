@@ -1,0 +1,43 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.primary {
+  background: var(--ente-primary);
+  color: #fff;
+}
+
+.primary:active {
+  background: var(--ente-primary-dark);
+}
+
+.secondary {
+  background: var(--ente-fill-dark);
+  color: var(--ente-text);
+}
+
+.secondary:active {
+  background: rgb(220, 220, 220);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}

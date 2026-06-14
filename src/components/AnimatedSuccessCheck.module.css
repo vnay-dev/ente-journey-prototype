@@ -1,0 +1,54 @@
+.root {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--ente-primary-light);
+  transform-origin: center;
+  animation: scaleCircle 480ms cubic-bezier(0.34, 1.4, 0.64, 1) forwards;
+}
+
+.check {
+  position: relative;
+  color: var(--ente-primary-dark);
+}
+
+.check path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawCheck 420ms ease-out 220ms forwards;
+}
+
+@keyframes scaleCircle {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .circle,
+  .check path {
+    animation: none;
+    transform: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
