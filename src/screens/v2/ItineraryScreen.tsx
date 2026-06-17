@@ -61,6 +61,9 @@ export function V2ItineraryScreen({ shared = false, previewItinerary }: Props) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const demoGuide = useDemoGuideOptional();
   const sharePreview = useSharePreviewOptional();
+  const demoEnding =
+    demoGuide?.presentationPhase === "outro" ||
+    demoGuide?.presentationPhase === "complete";
 
   useEffect(() => {
     if (sharePreview?.previewOpen) {
@@ -302,7 +305,9 @@ export function V2ItineraryScreen({ shared = false, previewItinerary }: Props) {
         </div>
       </div>
 
-      {!photoPreview && !shared ? <ItineraryEditFab onClick={() => setChatOpen(true)} /> : null}
+      {!photoPreview && !shared && !demoEnding ? (
+        <ItineraryEditFab onClick={() => setChatOpen(true)} />
+      ) : null}
       {!shared ? (
         <EnsuChatSheet
           open={chatOpen}

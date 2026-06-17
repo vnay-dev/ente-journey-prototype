@@ -429,8 +429,8 @@ export const DEMO_SCENES: DemoScene[] = [
     title: "Recipient opens the link",
     annotation:
       "On the right, a friend opens your link in their browser and scrolls through the trip.",
-    holdMs: 5200,
-    actions: [{ type: "wait", ms: 4800 }],
+    holdMs: 2800,
+    actions: [{ type: "wait", ms: 1400 }],
   },
   {
     id: "finale",
@@ -438,7 +438,7 @@ export const DEMO_SCENES: DemoScene[] = [
     scene: 7,
     title: "That's the journey",
     annotation: "A trip album becomes a shareable journey anyone can open.",
-    holdMs: 4800,
-    action: { type: "wait", ms: 1400 },
+    holdMs: 2800,
+    action: { type: "wait", ms: 600 },
   },
 ];

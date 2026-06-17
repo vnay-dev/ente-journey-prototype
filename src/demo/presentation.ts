@@ -14,10 +14,7 @@ export const DEMO_OUTRO_CENTER_MS = 900;
 export const DEMO_OUTRO_SPLASH_IN_MS = 700;
 
 /** Hold on splash */
-export const DEMO_OUTRO_SPLASH_HOLD_MS = 2800;
+export const DEMO_OUTRO_SPLASH_HOLD_MS = 2200;
 
-/** Green splash fades out */
-export const DEMO_OUTRO_SPLASH_FADE_MS = 1400;
-
-/** Main frame fades out after splash */
-export const DEMO_OUTRO_FRAME_FADE_MS = 1600;
+/** Main frame + splash fade out together to white */
+export const DEMO_OUTRO_FRAME_FADE_MS = 2000;

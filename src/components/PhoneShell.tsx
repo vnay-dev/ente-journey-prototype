@@ -13,7 +13,6 @@ import {
   DEMO_INTRO_FADE_MS,
   DEMO_OUTRO_DUAL_FADE_MS,
   DEMO_OUTRO_FRAME_FADE_MS,
-  DEMO_OUTRO_SPLASH_FADE_MS,
 } from "../demo/presentation";
 import { usePresentationMode } from "../hooks/usePresentationMode";
 import { PhoneChrome } from "./PhoneChrome";
@@ -95,6 +94,7 @@ export function PhoneShell({ children }: Props) {
   const presentationPhase = demoGuide?.presentationPhase ?? "running";
   const isIntro = presentationPhase === "intro";
   const isOutro = presentationPhase === "outro";
+  const isComplete = presentationPhase === "complete";
 
   const handleOutroComplete = useCallback(() => {
     demoGuide?.completePresentation();
@@ -152,10 +152,9 @@ export function PhoneShell({ children }: Props) {
   const frameCount = hasDualLayout ? 2 : 1;
   const scaleTransitioning = isOutro && (outroStep === "fade-dual" || outroStep === "center");
   const showEndSplash =
-    outroStep === "splash" || outroStep === "splash-fade" || outroStep === "frame-fade";
-  const splashFading = outroStep === "splash-fade";
+    !isComplete && (outroStep === "splash" || outroStep === "frame-fade");
   const showFramesExit =
-    outroStep === "done" || (outroStep === "frame-fade" && frameExitReady);
+    isComplete || (outroStep === "frame-fade" && frameExitReady);
 
   useDemoScale(isDemo, frameCount, showPreviewPrompt);
 
@@ -192,14 +191,13 @@ export function PhoneShell({ children }: Props) {
     .join(" ");
 
   return (
-    <div className="shell shell--demo">
+    <div className={`shell shell--demo${isComplete ? ` ${styles.shellComplete}` : ""}`}>
       <div
-        className={styles.stage}
+        className={`${styles.stage}${isComplete ? ` ${styles.stageComplete}` : ""}`}
         style={
           isOutro
             ? ({
                 "--demo-outro-dual-fade-ms": `${DEMO_OUTRO_DUAL_FADE_MS}ms`,
-                "--demo-outro-splash-fade-ms": `${DEMO_OUTRO_SPLASH_FADE_MS}ms`,
               } as React.CSSProperties)
             : undefined
         }
@@ -229,9 +227,7 @@ export function PhoneShell({ children }: Props) {
             scaleTransitioning={scaleTransitioning}
           >
             <DemoFrame
-              splash={
-                showEndSplash ? <DemoEndSplash fadingOut={splashFading} /> : undefined
-              }
+              splash={showEndSplash ? <DemoEndSplash /> : undefined}
             >
               {content}
             </DemoFrame>
